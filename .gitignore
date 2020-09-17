@@ -5,3 +5,7 @@ browser/
 debug.log 
 superlists/superlists/__pycache__/ 
 superlists/db.sqlite3 
+"*.pyc" 
+"__pycache__" 
+superlists/lists/__pycache__ 
+superlists/lists/migrations/__pycache__ 
