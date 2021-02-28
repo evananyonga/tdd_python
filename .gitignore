@@ -9,3 +9,4 @@ superlists/db.sqlite3
 "__pycache__" 
 superlists/lists/__pycache__ 
 superlists/lists/migrations/__pycache__ 
+tddenv
