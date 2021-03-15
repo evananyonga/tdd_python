@@ -10,7 +10,7 @@ class NewVisitorTest(unittest.TestCase):
     # run selenium using the chrome browser
     def setUp(self):
         self.browser = webdriver.Chrome(
-            'C:/Users/Ec/Desktop/Python/Software Dev practices/tdd_avec_python/browser/chromedriver')
+            'C:/chrome_driver/chromedriver')
 
     def tearDown(self):
         self.browser.quit()
@@ -21,7 +21,7 @@ class NewVisitorTest(unittest.TestCase):
 
         # She notices that the page title and header mention to-do lists
         self.assertIn('To-Do', self.browser.title)
-        header_text = self.browser.find_element_by_tag_name('h1')
+        header_text = self.browser.find_elements_by_tag_name('h1')
         self.assertIn('To-Do', header_text)
 
         # She is invited to enter a to-do list right away
