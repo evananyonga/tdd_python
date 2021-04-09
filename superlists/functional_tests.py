@@ -1,6 +1,7 @@
 # import selenium, a test automator for web applications
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+
 import time
 import unittest
 
@@ -21,8 +22,10 @@ class NewVisitorTest(unittest.TestCase):
 
         # She notices that the page title and header mention to-do lists
         self.assertIn('To-Do', self.browser.title)
+
         header_text = self.browser.find_elements_by_tag_name('h1')
-        self.assertIn('To-Do', header_text)
+        for e in header_text:
+            self.assertIn('To-Do', e.get_attribute('innerHTML'))
 
         # She is invited to enter a to-do list right away
         inputbox = self.browser.find_element_by_id('id_new_item')
@@ -39,7 +42,9 @@ class NewVisitorTest(unittest.TestCase):
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_tag_name('tr')
         self.assertTrue(
-            any(row.text == '1: Buy peacock feathers' for row in rows)
+            any(row.text == '1: Buy peacock feathers' for row in rows 
+                "New to-do item did not appear in table"
+                )
         )
 
         # There's still a textbox inviting her to add another item. She enters "Use Peacock feathers to make a fly"
