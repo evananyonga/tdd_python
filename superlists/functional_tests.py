@@ -5,9 +5,9 @@ import time
 import unittest
 import environ
 
-
 env = environ.Env()
 environ.Env.read_env()
+
 
 class NewVisitorTest(unittest.TestCase):
 
@@ -30,7 +30,6 @@ class NewVisitorTest(unittest.TestCase):
         for h in header_text:
             self.assertIn('To-Do', h.get_attribute('innerHTML'))
 
-
         # She is invited to enter a to-do list right away
         inputbox = self.browser.find_element_by_id('id_new_item')
         self.assertEqual(inputbox.get_attribute('placeholder'), 'Enter a To-Do item')
@@ -41,7 +40,7 @@ class NewVisitorTest(unittest.TestCase):
         # When she hits enter, the page updates and now the page lists
         # '1: Buy peacock feathers" as an item on the to-do list
         inputbox.send_keys(Keys.ENTER)
-        time.sleep(10)
+        time.sleep(1)
 
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_tag_name('tr')

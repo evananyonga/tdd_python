@@ -5,11 +5,13 @@
 	<body> 
 		<h1>Your To-Do list</h1>
 		<form method="POST">
-			<input  
+			{% csrf_token %}
+			<input
 				id="id_new_item"
 				placeholder="Enter a To-Do item"
 				name="item_text"
 			/>
+
 		</form>
 		<table id="id_list_table">
 
