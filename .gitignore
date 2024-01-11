@@ -8,9 +8,9 @@ superlists/db.sqlite3
 "__pycache__" 
 superlists/lists/__pycache__ 
 superlists/0lists/migrations/__pycache__
-tddenv
 superlists/geckodriver.log
 superlists/env/.env
+.env
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/windows,pycharm,django
