@@ -1,19 +1,16 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from superlists.settings import DRIVER_DIR
 
 import time
 import unittest
-import environ
-
-env = environ.Env()
-environ.Env.read_env()
 
 
 class NewVisitorTest(unittest.TestCase):
 
     # run selenium using the chrome browser
     def setUp(self):
-        self.browser = webdriver.Chrome(env('chrome_driver'))
+        self.browser = webdriver.Chrome(DRIVER_DIR)
 
     def tearDown(self):
         self.browser.quit()
